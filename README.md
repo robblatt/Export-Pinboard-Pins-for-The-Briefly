@@ -1,7 +1,7 @@
 # Export Pinboard Pins for The Briefly
 Creates a text file with links from Pinboard for use on thebriefly.com
 
-I was previously using IFTTT for some of this functionality. I save links to Pinboard.in, tagged with 'nyc' throughout the day. IFTTT would take those pins and put the text and URL that was saved into a spreadsheet in Google Sheets. Then I would format the text and put it into a WordPress post.
+I was previously using IFTTT for some of this functionality. I save links to Pinboard.in, tagged with 'nyc' throughout the day. IFTTT would take those pins and put the text and URL that was saved into a spreadsheet in Google Sheets. Then I would format the text, do some quick transformations in a text editor and put that into a WordPress post. This saves a few of those steps.
 
 This skips a step and formats the text and outputs a txt file for me to copy and paste from.
 
@@ -40,4 +40,7 @@ with open('the briefly.txt', 'w') as f:
     f.write('Pins Saved: ' + str(len(briefly)) + '\n\n')
     for item in briefly:
         f.write(item.split('\n')[0].replace('•', '<a href="' + item.split('\n')[1] + '">', 1).replace('•', '</a>', 1) + '\n\n')
-        ```
+```
+
+## Where To Go From Here
+The next step would be to use the WordPress API to save the text right to a WordPress draft post directly instead of a text file.
