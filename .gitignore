@@ -2,6 +2,7 @@
 briefly.py
 .DS_Store
 the briefly.txt
+mailchimp/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
