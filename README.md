@@ -39,7 +39,10 @@ open('the briefly.txt', 'w').close()
 with open('the briefly.txt', 'w') as f:
     f.write('Pins Saved: ' + str(len(briefly)) + '\n\n')
     for item in briefly:
-        f.write(item.split('\n')[0].replace('•', '<a href="' + item.split('\n')[1] + '">', 1).replace('•', '</a>', 1) + '\n\n')
+        if '•' in item:
+            f.write(item.split('\n')[0].replace('•', '<a href="' + item.split('\n')[1] + '">', 1).replace('•', '</a>', 1) + '\n\n')
+        else:
+            f.write('<a href="' + item.split('\n')[1] + '">' + ' '.join(item.split('\n')[0].split('(')[:1]).strip() + '</a>' + ' ' + item.split('\n')[0][len(' '.join(item.split('\n')[0].split('(')[:1])):])
 ```
 
 ## Where To Go From Here
