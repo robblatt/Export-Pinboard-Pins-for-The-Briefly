@@ -1,6 +1,7 @@
 # added files
 briefly.py
 .DS_Store
+the briefly.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
